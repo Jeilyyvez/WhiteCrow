@@ -1,0 +1,343 @@
+.header {
+    background-color: #000;
+    color: white;
+    position: fixed;
+    width: 100%;
+}
+
+.header__inner {
+    max-width: 75rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+    display: flex;
+}
+
+.header__menu {
+    width: 100%;
+    display: flex;
+    gap: 6.25em;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.header__menu-item {
+    cursor: pointer;
+    font-weight: 550;
+    text-align: center;
+}
+
+.header__menu-link {
+    position: relative;
+    padding: 0.4375em 0.5em;
+    transition: color 0.3s ease;
+    text-align: center;
+}
+
+.header__menu-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.header__menu-link:hover::after {
+    width: 100%;
+}
+
+.main-section {
+    background-image: url("../images/vesta.png");
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
+}
+
+.main-section__inner {
+    color: white;
+    min-height: inherit;
+    display: flex;
+    align-items: center;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 0 1.5625rem;
+    width: 100%;
+}
+
+.main-section__title {
+    font-size: 1.75rem;
+    font-weight: 450;
+    margin-bottom: 1.25rem;
+}
+
+.main-section__description {
+    color: #afafaf;
+    font-weight: 250;
+    line-height: 2;
+    margin-bottom: 1.25rem;
+}
+
+.services {
+    min-height: 100vh;
+    background-color: #f5f5f7;
+}
+
+.services__inner {
+    min-height: inherit;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 1rem 1.5625rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 1.75rem;
+}
+
+.services-list__inner {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 1.143rem 2.286rem;
+    border-radius: 25px;
+    width: 100%;
+}
+
+.services__item {
+    border-top: 1px solid #b9b9b9;
+    padding: 0.714em 0;
+}
+
+.services__item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.75rem;
+}
+
+.services__item-title {
+    font-size: 1.75rem;
+    font-weight: 450;
+    transition: color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services__item-title:hover {
+    color: #969696;
+}
+
+.services__icon::before {
+    content: '+';
+    font-size: 2rem;
+}
+
+.services__item--open .services__icon::before {
+    content: '×';
+}
+
+.services__sublist {
+    list-style-type: disc;
+    padding-left: 2.5rem;
+    margin-top: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    margin-top 0.3s ease;
+}
+
+.services__item--open .services__sublist {
+    margin-top: 0.357em;
+}
+
+.services__subitem {
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 0.3125rem 0;
+}
+
+.contacts {
+    min-height: 100vh;
+    background-color: #1E1E1E;
+    color: white;
+}
+
+.contacts__inner {
+    min-height: inherit;
+    max-width: 75rem;
+    padding: 4rem 1.5625rem;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.contacts__detail-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 1em;
+    width: 100%;
+}
+
+.contacts__email-container {
+    text-align: center;
+}
+
+.contacts__phone-container {
+    text-align: center;
+}
+
+.contacts__info {
+    transition: color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contacts__info:hover {
+    color: #b9b9b9;
+}
+
+.contacts__map-container {
+    display: flex;
+    justify-content: center;
+    height: 600px;
+    width: 100%;
+}
+
+.contacts__map {
+    border-radius: 25px;
+    width: 100%;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+}
+
+.footer__inner {
+    display: flex;
+    padding: 0.5rem;
+    justify-content: center;
+    max-width: 75rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/* ——— Desktop-XL (≥1440px) ——— */
+@media (min-width: 1440px) {
+    .header__inner,
+    .main-section__inner,
+    .services__inner,
+    .contacts__inner,
+    .footer__inner {
+        max-width: 1440px;
+    }
+
+    .services-list__inner {
+        width: 1050px;
+    }
+}
+
+/* ——— Desktop (≥1200px и <1440px) ——— */
+@media (min-width: 1200px) and (max-width: 1439px) {
+    html {
+        font-size: 100%; /* 16px */
+    }
+
+    .header__inner,
+    .main-section__inner,
+    .services__inner,
+    .contacts__inner,
+    .footer__inner {
+        max-width: 1200px;
+    }
+
+    .contacts__map-container {
+        height: 500px;
+    }
+}
+
+/* ——— Tablet-L (≥992px и <1200px) ——— */
+@media (min-width: 992px) and (max-width: 1199px) {
+    html {
+        font-size: 100%; /* 16px */
+    }
+
+    .header__inner,
+    .main-section__inner,
+    .services__inner,
+    .contacts__inner,
+    .footer__inner {
+        max-width: 960px;
+    }
+}
+
+/* ——— Tablet-M (≥768px и <992px) ——— */
+@media (min-width: 768px) and (max-width: 991px) {
+    html {
+        font-size: 87.5%; /* 14px */
+    }
+
+    .header__inner,
+    .main-section__inner,
+    .services__inner,
+    .contacts__inner,
+    .footer__inner {
+        max-width: 720px;
+    }
+}
+
+/* ——— Mobile-L (≥576px и <768px) ——— */
+@media (min-width: 576px) and (max-width: 767px) {
+    html {
+        font-size: 81.25%; /* 13px */
+    }
+
+    .header__inner,
+    .main-section__inner,
+    .services__inner,
+    .contacts__inner,
+    .footer__inner {
+        max-width: 540px;
+    }
+
+    .main-section__inner {
+        justify-content: center;
+    }
+
+
+}
+
+/* ——— Mobile-S (<576px) ——— */
+@media (max-width: 575px) {
+    html {
+        font-size: 75%; /* 12px */
+    }
+
+    .header__inner,
+    .main-section__inner,
+    .services__inner,
+    .contacts__inner,
+    .footer__inner {
+        max-width: 100%; /* при очень узких экранах лучше полностью растягиваться */
+    }
+
+    .main-section__inner {
+        justify-content: center;
+    }
+
+    .header__menu-link {
+        padding: 0 0;
+    }
+
+    .contacts__map-container {
+        height: 450px;
+    }
+}
+
+

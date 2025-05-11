@@ -1,0 +1,77 @@
+/* ---------- 1. Базовые сбросы ---------- */
+*, *::before, *::after {
+    box-sizing: inherit; /* box‑model = border‑box */
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box; /* наследуется всем элементам */
+    font-size: 100%; /* уважает user default (16/18 px) */
+    -webkit-text-size-adjust: 100%; /* стоп auto‑zoom на iOS */
+}
+
+/* ---------- 2. Типографика ---------- */
+body {
+    line-height: 1.5;
+    color: black;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* Заголовки получают адекватное расстояние сверху */
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+/* ---------- 3. Базовые списки ---------- */
+ul,
+ol {
+    list-style: none;
+}
+
+/* ---------- 4. Медиа ---------- */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* ---------- 5. Формы ---------- */
+button,
+input,
+select,
+textarea {
+    font: inherit; /* наследуют шрифт */
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+}
+
+/* Убираем лишний outline в Firefox */
+::-moz-focus-inner {
+    border: 0;
+}
+
+/* ---------- 6. Ссылки ---------- */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ---------- 7. Таблицы ---------- */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ---------- 8. Адаптивная высота ---------- */
+html, body {
+    height: 100%; /* помогает 100vh‑секциям в Safari iOS */
+}
